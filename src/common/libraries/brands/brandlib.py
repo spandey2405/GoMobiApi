@@ -14,6 +14,7 @@ class BrandLib():
                 selected = brandlist[brand]
                 image_name = brandlist[brand][KEY_BRAND_IMAGE].split('/')[-1].replace('lg_','mobi_brand_')
                 selected[KEY_ADEEDON] = time.time()
+                selected[KEY_BRAND_URL] = 'brand' + selected[KEY_BRAND_NAME].replace(' ','-').replace('&','-and-').replace(';','') + '.php'
                 selected[KEY_BRAND_IMAGE] = image_name
                 Brands.objects.create(**selected)
             return "Brands Added"
