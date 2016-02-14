@@ -1,6 +1,6 @@
 # URLs Directories
 
-BRAND_IMAGES_URL = '/Users/sp/Work/Webserver/images/'
+BRAND_IMAGES_URL = '/var/www/images/'
 
 
 # User Sign in / sign up constants
