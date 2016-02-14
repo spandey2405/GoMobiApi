@@ -1,0 +1,4 @@
+GomobiApi/settings.py
+*.pyc
+.idea
+.DS_Store

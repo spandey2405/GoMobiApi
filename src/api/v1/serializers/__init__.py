@@ -1,0 +1,1 @@
+from src.api.v1.serializers.brandserializer import BrandSerializer
