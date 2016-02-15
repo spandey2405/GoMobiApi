@@ -26,7 +26,7 @@ class Mobiles(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.mobile_id:
-            self.mobile_id = Mobiles.objects.generate_brandid()
+            self.mobile_id = Mobiles.objects.generate_mobileid()
 
         return super(Mobiles, self).save(*args, **kwargs)
 
