@@ -5,7 +5,7 @@ from src.api.v1.serializers.mobileserializer import MobileSerializer
 class MobileLib():
 
     def get_mobiles(self, mobilename):
-
+        print mobilename
         try:
             mobile = mobilename['u']
             mobiles = Mobiles.objects.filter('mobile_name')
