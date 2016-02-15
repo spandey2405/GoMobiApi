@@ -18,8 +18,8 @@ class MobileLib():
         for mobile in mobiles:
             count += 1
             response[count] = MobileSerializer(mobile).data
-            if count > 101:
-                return response
+
+        return response
 
 
     def add_mobiles(self, mobilelist):
