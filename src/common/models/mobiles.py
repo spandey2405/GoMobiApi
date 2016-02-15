@@ -8,7 +8,7 @@ class MobilesManager(models.Manager):
 
 class Mobiles(models.Model):
     mobile_id          = models.CharField(max_length=UID_LENGTH, primary_key=True, editable=False)
-    brand_name         = models.CharField(max_length=MAX_NAME_LENGTH, unique=True)
+    brand_name         = models.CharField(max_length=MAX_NAME_LENGTH)
     mobile_name        = models.CharField(max_length=MAX_NAME_LENGTH, unique=True)
     image              = models.CharField(max_length=MAX_URL_LENGTH)
     link               = models.CharField(max_length=MAX_URL_LENGTH)
