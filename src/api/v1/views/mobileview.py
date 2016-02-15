@@ -25,8 +25,9 @@ class MobilesView( LoggingMixin, generics.GenericAPIView, mixins.UpdateModelMixi
 
     @auto_close_db
     def get(self,request):
-
-        return CustomResponse(message='User added', payload="GET BRAND LIST HERE", code=HTTP_200_OK)
+        Query = request.data.copy()
+        payload = api_lib.get_mobiles(mobilename=Query)
+        return CustomResponse(message='User added', payload=payload, code=HTTP_200_OK)
 
     @auto_close_db
     def post(self, request):

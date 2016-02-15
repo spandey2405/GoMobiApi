@@ -1,8 +1,25 @@
 import time
 from src.common.models.mobiles import Mobiles
 from src.common.libraries.constants import *
-
+from src.api.v1.serializers.mobileserializer import MobileSerializer
 class MobileLib():
+
+    def get_mobiles(self, mobilename):
+
+        try:
+            mobile = mobilename['u']
+            mobiles = Mobiles.objects.filter('mobile_name')
+        except Exception as e:
+            mobiles = Mobiles.objects.all()
+
+        response = dict()
+        count = 0
+
+        for mobile in mobiles:
+            count += 1
+            response[count] = MobileSerializer(mobile).data
+
+        return response
 
 
     def add_mobiles(self, mobilelist):
