@@ -5,19 +5,27 @@ from src.api.v1.serializers.mobileserializer import MobileSerializer
 class MobileLib():
 
     def get_mobiles(self, mobilename):
-        print mobilename
         try:
             mobile = mobilename['u']
             mobiles = Mobiles.objects.filter('mobile_name')
         except Exception as e:
             mobiles = Mobiles.objects.all()
 
+        try:
+            page = str(mobilename['page'])
+        except Exception as e:
+            page = 1
+
+        end = page * 100
+        start = end - 99
+
         response = dict()
-        count = 0
+        count = 1
 
         for mobile in mobiles:
+            if count > start and count < end:
+                response[count] = MobileSerializer(mobile).data
             count += 1
-            response[count] = MobileSerializer(mobile).data
 
         return response
 
