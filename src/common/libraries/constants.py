@@ -48,7 +48,7 @@ KEY_BRAND_IMAGE         = 'brand_image'
 KEY_BRAND_URL           = 'brand_url'
 KEY_BRAND_DES           = 'brand_des'
 KEY_ADEEDON             = 'addedon'
-
+KEY_LINK                = 'link'
 
 
 

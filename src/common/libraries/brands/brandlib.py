@@ -17,7 +17,6 @@ class BrandLib():
                 selected[KEY_BRAND_URL] = 'brand-' + selected[KEY_BRAND_NAME].replace(' ','-').replace('&','-and-').replace(';','').replace('_','-')
                 selected[KEY_BRAND_URL] = selected[KEY_BRAND_URL].lower()[:-1]
                 selected[KEY_BRAND_URL] = selected[KEY_BRAND_URL] + '.php'
-
                 selected[KEY_BRAND_IMAGE] = image_name
                 Brands.objects.create(**selected)
             return "Brands Added"

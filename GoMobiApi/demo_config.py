@@ -104,10 +104,10 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': '',
-        'USER': '',
+        'NAME': 'gomobi',
+        'USER': 'root',
         'PASSWORD': '',
-        'HOST': '',
+        'HOST': 'localhost',
         # 'PORT': '5432',
     }
 }
