@@ -43,7 +43,6 @@ class MobileLib():
                 selected[KEY_ADEEDON] = time.time()
                 selected[KEY_MOBILE_NAME] = selected[KEY_MOBILE_NAME].lower()
                 Mobiles.objects.create(**selected)
-
         except Exception as e:
             print e
 
@@ -51,9 +50,12 @@ class MobileLib():
 
     def get_mobile(self, mobilename):
         try:
-            file = mobilename['u'].lower()+'.json'
+            file = mobilename['u'].lower().replace('plus','+')+'.json'
+            print file
             mobiles = Mobiles.objects.all().filter(filejson=file)
-        except:
+            print mobiles[0]
+        except Exception as e:
+            print e
             return None
         response = dict()
         selected = MobileSerializer(mobiles[0]).data

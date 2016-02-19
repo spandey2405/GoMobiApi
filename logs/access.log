@@ -37,3 +37,37 @@ server {
 {"levelname": "DEBUG", "asctime": "2016-02-14 12:31:23,457", "message": "Extra data supplied", "payload": null, "success": false, "error": {"code": 400}}
 {"levelname": "DEBUG", "asctime": "2016-02-14 12:31:32,151", "message": null, "endpoint": "/gomobi/admin/v1/login/", "request": {"email": "scoder91@gmail.com", "password_hash": "gomobiSearch@admin@api@1121"}, "method": "POST"}
 {"levelname": "DEBUG", "asctime": "2016-02-14 12:31:32,163", "message": "logged in", "payload": {"access_token": "dcb5c521da03d034fdb9939b5155ff206bf4ed94"}, "success": true}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:05:25,448", "message": null, "endpoint": "/gomobi/web/v1/mobile/", "request": {}, "method": "GET"}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:05:26,454", "message": "Unhandled Exception", "payload": null, "success": false, "error": {"code": 500}}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:06:02,835", "message": null, "endpoint": "/gomobi/web/v1/mobile/", "request": {}, "method": "GET"}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:06:02,929", "message": "User added", "payload": null, "success": true}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:06:14,847", "message": null, "endpoint": "/gomobi/web/v1/mobile/", "request": {}, "method": "GET"}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:06:14,906", "message": "User added", "payload": null, "success": true}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:06:15,828", "message": null, "endpoint": "/gomobi/web/v1/mobile/", "request": {}, "method": "GET"}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:06:15,829", "message": "User added", "payload": null, "success": true}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:06:16,410", "message": null, "endpoint": "/gomobi/web/v1/mobile/", "request": {}, "method": "GET"}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:06:16,412", "message": "User added", "payload": null, "success": true}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:06:16,979", "message": null, "endpoint": "/gomobi/web/v1/mobile/", "request": {}, "method": "GET"}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:06:16,982", "message": "User added", "payload": null, "success": true}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:06:17,563", "message": null, "endpoint": "/gomobi/web/v1/mobile/", "request": {}, "method": "GET"}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:06:17,565", "message": "User added", "payload": null, "success": true}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:06:47,286", "message": null, "endpoint": "/gomobi/web/v1/mobile/", "request": {}, "method": "GET"}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:06:47,595", "message": "User added", "payload": null, "success": true}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:25:19,557", "message": null, "endpoint": "/gomobi/web/v1/mobile/", "request": {}, "method": "GET"}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:25:19,650", "message": "User added", "payload": null, "success": true}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:26:13,459", "message": null, "endpoint": "/gomobi/web/v1/mobile/", "request": {}, "method": "GET"}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:26:13,552", "message": "User added", "payload": null, "success": true}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:27:21,569", "message": null, "endpoint": "/gomobi/web/v1/mobile/", "request": {}, "method": "GET"}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:27:21,600", "message": "User added", "payload": null, "success": true}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:27:56,106", "message": null, "endpoint": "/gomobi/web/v1/mobile/", "request": {}, "method": "GET"}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:27:56,180", "message": "User added", "payload": null, "success": true}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:28:18,938", "message": null, "endpoint": "/gomobi/web/v1/mobile/", "request": {}, "method": "GET"}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:28:18,989", "message": "User added", "payload": null, "success": true}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:28:42,451", "message": null, "endpoint": "/gomobi/web/v1/mobile/", "request": {}, "method": "GET"}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:28:42,452", "message": null, "endpoint": "/gomobi/web/v1/mobile/", "request": {}, "method": "GET"}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:28:42,500", "message": "User added", "payload": {"mobile_id": 4376, "name": "Samsung Galaxy S6 edge+ Duos", "filejson": "samsung_galaxy_s6_edge+_duos-7509.json", "image": "mobile-samsung-galaxy-s6-edge-plus.jpg", "des": "Samsung Galaxy S6 edge+ Duos Android smartphone. Announced 2015, August. Features 3G, 5.7&Prime; Super AMOLED capacitive touchscreen, 16 MP camera, Wi-Fi, GPS, Bluetooth.", "launched": "2015, Aug"}, "success": true}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:28:42,569", "message": "User added", "payload": {"mobile_id": 4376, "name": "Samsung Galaxy S6 edge+ Duos", "filejson": "samsung_galaxy_s6_edge+_duos-7509.json", "image": "mobile-samsung-galaxy-s6-edge-plus.jpg", "des": "Samsung Galaxy S6 edge+ Duos Android smartphone. Announced 2015, August. Features 3G, 5.7&Prime; Super AMOLED capacitive touchscreen, 16 MP camera, Wi-Fi, GPS, Bluetooth.", "launched": "2015, Aug"}, "success": true}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:29:01,805", "message": null, "endpoint": "/gomobi/web/v1/mobiles/", "request": {}, "method": "GET"}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:29:02,065", "message": "User added", "payload": {"data": {}, "No Of Mobiles": 0}, "success": true}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:29:11,394", "message": null, "endpoint": "/gomobi/web/v1/mobiles/", "request": {}, "method": "GET"}
+{"levelname": "DEBUG", "asctime": "2016-02-19 21:29:11,440", "message": "User added", "payload": {"data": {}, "No Of Mobiles": 0}, "success": true}

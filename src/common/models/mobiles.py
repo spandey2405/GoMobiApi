@@ -21,7 +21,7 @@ class Mobiles(models.Model):
         return super(Mobiles, self).save(*args, **kwargs)
 
     def __unicode__(self):
-        return self.mobile_id
+        return str(self.mobile_id)
 
     class Meta:
         db_table = 'gomobi_mobiles'
