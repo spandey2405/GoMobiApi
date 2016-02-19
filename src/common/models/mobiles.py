@@ -7,15 +7,13 @@ class MobilesManager(models.Manager):
         return str(uuid.uuid4())
 
 class Mobiles(models.Model):
-    mobile_id          = models.CharField(max_length=UID_LENGTH, primary_key=True, editable=False)
-    brand_name         = models.CharField(max_length=MAX_NAME_LENGTH)
-    mobile_name        = models.CharField(max_length=MAX_NAME_LENGTH, unique=True)
+    mobile_id          = models.AutoField(primary_key=True)
+    name        = models.CharField(max_length=MAX_NAME_LENGTH, unique=True)
     image              = models.CharField(max_length=MAX_URL_LENGTH)
-    link               = models.CharField(max_length=MAX_URL_LENGTH)
-    short_des          = models.CharField(max_length=MAX_DES_LENGTH, default="Not Available")
-    launch_date        = models.CharField(max_length=200, default='NA')
+    filejson               = models.CharField(max_length=MAX_URL_LENGTH)
+    des          = models.CharField(max_length=MAX_DES_LENGTH, default="Not Available")
+    launched        = models.DecimalField(max_digits=6, decimal_places=2)
     addedon            = models.DecimalField(max_digits=20, decimal_places=6)
-    objects            = MobilesManager()
 
     def is_authenticated(self):
         """
@@ -25,14 +23,11 @@ class Mobiles(models.Model):
         return True
 
     def save(self, *args, **kwargs):
-        if not self.mobile_id:
-            self.mobile_id = Mobiles.objects.generate_mobileid()
-
         return super(Mobiles, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return self.mobile_id
 
     class Meta:
-        db_table = 'mobi_mobiles'
+        db_table = 'gomobi_mobiles'
         app_label = 'common'

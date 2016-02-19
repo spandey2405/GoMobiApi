@@ -36,7 +36,6 @@ class MobileLib():
             for mobile in mobilelist:
                 selected = mobilelist[mobile]
                 selected[KEY_ADEEDON] = time.time()
-                selected[KEY_LINK] = selected[KEY_LINK].replace('.php','.json')
                 Mobiles.objects.create(**selected)
 
         except Exception as e:
