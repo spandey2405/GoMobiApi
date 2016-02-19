@@ -50,7 +50,7 @@ class MobileLib():
 
     def get_mobile(self, mobilename):
         try:
-            file = mobilename['u'].lower().replace('plus','+')+'.json'
+            file = mobilename['u'].lower().replace('[[plus]]','+')+'.json'
             print file
             mobiles = Mobiles.objects.all().filter(filejson=file)
             print mobiles[0]
