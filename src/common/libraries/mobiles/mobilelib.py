@@ -49,6 +49,18 @@ class MobileLib():
 
         return "Mobiles Added"
 
+    def get_mobile(self, mobilename):
+        try:
+            file = mobilename['u'].lower()+'.json'
+            mobiles = Mobiles.objects.all().filter(filejson=file)
+        except:
+            return None
+        response = dict()
+        selected = MobileSerializer(mobiles[0]).data
+        selected[KEY_LAUNCHED] = self.getdate(selected[KEY_LAUNCHED])
+        response = selected
+        return response
+
     def getdate(self, date):
         m = {
             1:'Jan',

@@ -12,5 +12,6 @@ urlpatterns = [
      url(r'^gomobi/admin/v1/login/$', TokenView.as_view()),
      url(r'^gomobi/web/v1/brands/$', BrandView.as_view()),
      url(r'^gomobi/web/v1/mobiles/$', MobilesView.as_view()),
+     url(r'^gomobi/web/v1/mobile/$', MobilesView.as_view()),
      ]
 
