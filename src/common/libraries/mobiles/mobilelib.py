@@ -7,8 +7,7 @@ class MobileLib():
 
     def get_mobiles(self, mobilename):
         try:
-            name = mobilename['u']
-            print name
+            name = mobilename['u'].lower()
             mobiles = Mobiles.objects.all().filter(name__contains=name).order_by('-launched')
         except:
             mobiles = Mobiles.objects.all().order_by('-launched')
