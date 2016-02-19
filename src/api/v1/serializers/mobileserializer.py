@@ -8,11 +8,11 @@ class MobileSerializer(DynamicFieldsModelSerializer):
         model = Mobiles
         fields = (
             KEY_MOBILE_ID,
-            KEY_BRAND_NAME,
             KEY_MOBILE_NAME,
             KEY_LINK,
             KEY_IMAGE,
             KEY_SHORT_DES,
-            KEY_ADEEDON
+            KEY_LAUNCHED,
+
             )
 

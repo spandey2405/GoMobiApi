@@ -48,11 +48,12 @@ KEY_BRAND_IMAGE         = 'brand_image'
 KEY_BRAND_URL           = 'brand_url'
 KEY_BRAND_DES           = 'brand_des'
 KEY_ADEEDON             = 'addedon'
+KEY_LAUNCHED            = 'launched'
 
-KEY_LINK                = 'link'
-KEY_MOBILE_NAME         = 'mobile_name'
+KEY_LINK                = 'filejson'
+KEY_MOBILE_NAME         = 'name'
 KEY_IMAGE               = 'image'
-KEY_SHORT_DES           = 'short_des'
+KEY_SHORT_DES           = 'des'
 KEY_MOBILE_ID           = 'mobile_id'
 
 

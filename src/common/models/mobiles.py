@@ -1,19 +1,14 @@
 from django.db import models
 from src.common.libraries.constants import *
-import uuid
-
-class MobilesManager(models.Manager):
-    def generate_mobileid(self):
-        return str(uuid.uuid4())
 
 class Mobiles(models.Model):
-    mobile_id          = models.AutoField(primary_key=True)
-    name        = models.CharField(max_length=MAX_NAME_LENGTH, unique=True)
-    image              = models.CharField(max_length=MAX_URL_LENGTH)
-    filejson               = models.CharField(max_length=MAX_URL_LENGTH)
-    des          = models.CharField(max_length=MAX_DES_LENGTH, default="Not Available")
+    mobile_id       = models.AutoField(primary_key=True)
+    name            = models.CharField(max_length=MAX_NAME_LENGTH, unique=True)
+    image           = models.CharField(max_length=MAX_URL_LENGTH)
+    filejson        = models.CharField(max_length=MAX_URL_LENGTH)
+    des             = models.CharField(max_length=MAX_DES_LENGTH, default="Not Available")
     launched        = models.DecimalField(max_digits=6, decimal_places=2)
-    addedon            = models.DecimalField(max_digits=20, decimal_places=6)
+    addedon         = models.DecimalField(max_digits=20, decimal_places=6)
 
     def is_authenticated(self):
         """
