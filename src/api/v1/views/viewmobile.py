@@ -18,7 +18,7 @@ api_lib = MobileLib()
 }
 '''
 
-class MobilesView( LoggingMixin, generics.GenericAPIView, mixins.UpdateModelMixin, mixins.DestroyModelMixin, mixins.ListModelMixin):
+class MobileView( LoggingMixin, generics.GenericAPIView, mixins.UpdateModelMixin, mixins.DestroyModelMixin, mixins.ListModelMixin):
     model = Mobiles
     serializer_class = BrandSerializer
     # permission_classes = (permissions.IsAuthenticated, )
