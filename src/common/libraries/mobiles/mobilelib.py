@@ -8,18 +8,30 @@ class MobileLib():
     def get_mobiles(self, mobilename):
         try:
             name = mobilename['u'].lower()
-            mobiles = Mobiles.objects.all().filter(name__contains=name).order_by('-launched')
+            try:
+                total = int(mobilename['total'])
+                mobiles = Mobiles.objects.all().filter(name__contains=name).order_by('-launched')[:total]
+            except:
+                mobiles = Mobiles.objects.all().filter(name__contains=name).order_by('-launched')
+
         except:
-            mobiles = Mobiles.objects.all().order_by('-launched')
+
+            try:
+                total = int(mobilename['total'])
+                mobiles = Mobiles.objects.all().order_by('-launched')[:total]
+            except:
+                mobiles = Mobiles.objects.all().order_by('-launched')
 
         response = OrderedDict()
         count = 0
         response["data"] = OrderedDict()
+
         for mobile in mobiles:
             count += 1
             selected = MobileSerializer(mobile).data
             selected[KEY_LAUNCHED] = self.getdate(selected[KEY_LAUNCHED])
             response["data"][count] = selected
+
         response["No Of Mobiles"] = count
         return response
 
