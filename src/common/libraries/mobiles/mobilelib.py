@@ -5,34 +5,25 @@ from src.common.libraries.constants import *
 from src.api.v1.serializers.mobileserializer import MobileSerializer
 class MobileLib():
 
-    def get_mobiles(self, mobilename):
-        try:
-            name = mobilename['u'].lower()
-            try:
-                total = int(mobilename['total'])
-                mobiles = Mobiles.objects.all().filter(name__contains=name).order_by('-launched')[:total]
-            except:
-                mobiles = Mobiles.objects.all().filter(name__contains=name).order_by('-launched')
+    def get_mobiles(self, queryobj):
+        page = 1
+        if "page" in queryobj:
+            page = int(queryobj['page'])
 
-        except:
-
-            try:
-                total = int(mobilename['total'])
-                mobiles = Mobiles.objects.all().order_by('-launched')[:total]
-            except:
-                mobiles = Mobiles.objects.all().order_by('-launched')
+        if "u" in queryobj:
+            searchfor = queryobj['u'].lower()
+            print searchfor
+            total = Mobiles.objects.filter(name__like="%samsung%").count()
+            mobiles = Mobiles.objects.filter(name__like = searchfor)
+        else :
+            mobiles = Mobiles.objects.all()
 
         response = OrderedDict()
-        count = 0
-        response["data"] = OrderedDict()
+        response['total'] = total
 
         for mobile in mobiles:
-            count += 1
             selected = MobileSerializer(mobile).data
-            selected[KEY_LAUNCHED] = self.getdate(selected[KEY_LAUNCHED])
-            response["data"][count] = selected
-
-        response["No Of Mobiles"] = count
+            response[selected[KEY_MOBILE_ID]] = selected
         return response
 
     def add_mobiles(self, mobilelist):
