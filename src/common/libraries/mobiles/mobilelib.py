@@ -3,6 +3,7 @@ from collections import OrderedDict
 from src.common.models.mobiles import Mobiles
 from src.common.libraries.constants import *
 from src.api.v1.serializers.mobileserializer import MobileSerializer
+
 class MobileLib():
 
     def get_mobiles(self, queryobj):
@@ -15,26 +16,25 @@ class MobileLib():
             startlist = (32 * (page - 1 ))
 
             if "u" in queryobj:
-                print "Object Present"
                 searchfor = "%" + queryobj['u'].lower() + "%"
                 total = Mobiles.objects.filter(name__like = searchfor).count()
                 Query = "SELECT * FROM `gomobi_mobiles` WHERE `name` LIKE '{0}' ORDER BY `gomobi_mobiles`.`mobile_id` DESC LIMIT {1} , 32".format(str(searchfor),str(startlist))
-                print Query
                 mobiles = Mobiles.objects.raw(Query)
 
             else :
                 total = Mobiles.objects.all().count()
                 Query = "SELECT * FROM `gomobi_mobiles` ORDER BY `gomobi_mobiles`.`mobile_id` DESC LIMIT {0} , 32".format(str(startlist))
-                print Query
                 mobiles = Mobiles.objects.raw(Query)
 
             response = OrderedDict()
             response['total'] = total
             response['data'] = OrderedDict()
-
+            print Query
+            print mobiles
             for mobile in mobiles:
                 selected = MobileSerializer(mobile).data
                 response['data'][selected[KEY_MOBILE_ID]] = selected
+
             return response
 
         except Exception as e:
