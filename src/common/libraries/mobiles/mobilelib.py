@@ -32,7 +32,7 @@ class MobileLib():
             count = 0
             for mobile in mobiles:
                 count += 1
-                if count >= startlist or count <=endlist:
+                if count >= startlist and count <=endlist:
                     selected = MobileSerializer(mobile).data
                     selected[KEY_SHORT_DES] = selected[KEY_SHORT_DES][0:80] + "....."
                     response['data'][selected[KEY_MOBILE_ID]] = selected
