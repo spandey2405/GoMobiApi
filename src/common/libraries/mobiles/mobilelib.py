@@ -6,14 +6,13 @@ from src.api.v1.serializers.mobileserializer import MobileSerializer
 class MobileLib():
 
     def get_mobiles(self, queryobj):
-        page = 1
-
-        if "page" in queryobj:
-            page = int(queryobj['page'])
-
-        startlist = (32 * (page - 1 ))
-
         try:
+            page = 1
+
+            if "page" in queryobj:
+                page = int(queryobj['page'])
+
+            startlist = (32 * (page - 1 ))
 
             if "u" in queryobj:
                 searchfor = queryobj['u'].lower()
@@ -33,7 +32,7 @@ class MobileLib():
             for mobile in mobiles:
                 selected = MobileSerializer(mobile).data
                 response['data'][selected[KEY_MOBILE_ID]] = selected
-    
+
             return response
 
         except Exception as e:
