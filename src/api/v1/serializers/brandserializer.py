@@ -1,6 +1,6 @@
 from src.api.v1.serializers.dynamicfieldmodelserializer import DynamicFieldsModelSerializer
 from src.common.libraries.constants import *
-from src.common.models import Brands
+from src.common.models.brands import Brands
 
 class BrandSerializer(DynamicFieldsModelSerializer):
 
