@@ -20,7 +20,7 @@ class MobileLib():
             if "u" in queryobj:
                 searchfor = "%" + queryobj['u'].lower() + "%"
                 total = Mobiles.objects.filter(name__like = searchfor).count()
-                mobiles = Mobiles.objects.filter(name__like = searchfor).order_by('-mobile_id')
+                mobiles = Mobiles.objects.filter(name__like = searchfor).order_by('-launched')
 
             else :
                 total = Mobiles.objects.all().count()
