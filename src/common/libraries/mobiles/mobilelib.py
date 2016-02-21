@@ -29,8 +29,8 @@ class MobileLib():
             response['data'] = OrderedDict()
 
             for mobile in mobiles:
-                print mobile
                 selected = MobileSerializer(mobile).data
+                selected[KEY_SHORT_DES] = selected[KEY_SHORT_DES][0:80] + '.....'
                 response['data'][selected[KEY_MOBILE_ID]] = selected
 
             return response
