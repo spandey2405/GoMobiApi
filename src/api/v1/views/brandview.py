@@ -25,6 +25,7 @@ class BrandView( LoggingMixin, generics.GenericAPIView, mixins.UpdateModelMixin,
 
     @auto_close_db
     def get(self,request):
+        brand_list = request.data.copy()
         payload = api_lib.get_grands()
         return CustomResponse(message='User added', payload=payload, code=HTTP_200_OK)
 
