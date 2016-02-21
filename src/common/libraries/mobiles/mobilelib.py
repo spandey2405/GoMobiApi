@@ -16,9 +16,9 @@ class MobileLib():
 
             if "u" in queryobj:
                 print "Object Present"
-                searchfor = queryobj['u'].lower()
+                searchfor = "%" + queryobj['u'].lower() + "%"
                 total = Mobiles.objects.filter(name__like = searchfor).count()
-                Query = "SELECT * FROM `gomobi_mobiles` WHERE `name` LIKE '%{0}%' ORDER BY `gomobi_mobiles`.`mobile_id` DESC LIMIT {1} , 32".format(str(searchfor),str(startlist))
+                Query = "SELECT * FROM `gomobi_mobiles` WHERE `name` LIKE '{0}' ORDER BY `gomobi_mobiles`.`mobile_id` DESC LIMIT {1} , 32".format(str(searchfor),str(startlist))
                 mobiles = Mobiles.objects.raw(Query)
 
             else :
