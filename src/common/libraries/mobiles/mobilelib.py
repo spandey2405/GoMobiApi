@@ -13,7 +13,9 @@ class MobileLib():
             if "page" in queryobj:
                 page = int(queryobj['page'])
 
-            startlist = (32 * (page - 1 ))
+            endlist = page * 20
+            startlist = endlist - 19
+
 
             if "u" in queryobj:
                 searchfor = "%" + queryobj['u'].lower() + "%"
@@ -27,11 +29,13 @@ class MobileLib():
             response = OrderedDict()
             response['total'] = total
             response['data'] = OrderedDict()
-
+            count = 0
             for mobile in mobiles:
-                selected = MobileSerializer(mobile).data
-                selected[KEY_SHORT_DES] = selected[KEY_SHORT_DES][0:80] + '.....'
-                response['data'][selected[KEY_MOBILE_ID]] = selected
+                count += 1
+                if count >= startlist or count <=endlist:
+                    selected = MobileSerializer(mobile).data
+                    selected[KEY_SHORT_DES] = selected[KEY_SHORT_DES][0:80] + "....."
+                    response['data'][selected[KEY_MOBILE_ID]] = selected
 
             return response
 
