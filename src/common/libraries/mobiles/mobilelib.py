@@ -11,9 +11,9 @@ class MobileLib():
             page = int(queryobj['page'])
 
         if "u" in queryobj:
-            searchfor = queryobj['u'].lower()
+            searchfor = "%" + queryobj['u'].lower() + "%"
             print searchfor
-            total = Mobiles.objects.filter(name__like="%samsung%").count()
+            total = Mobiles.objects.filter(name__like = searchfor).count()
             mobiles = Mobiles.objects.filter(name__like = searchfor)
         else :
             mobiles = Mobiles.objects.all()
