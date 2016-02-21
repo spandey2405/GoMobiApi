@@ -30,7 +30,7 @@ class MobileLib():
             response['total'] = total
             response['data'] = OrderedDict()
             print Query
-            print mobiles
+            print mobiles[0]
             for mobile in mobiles:
                 selected = MobileSerializer(mobile).data
                 response['data'][selected[KEY_MOBILE_ID]] = selected
