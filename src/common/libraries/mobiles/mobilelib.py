@@ -24,7 +24,7 @@ class MobileLib():
 
             else :
                 total = Mobiles.objects.all().count()
-                mobiles = Mobiles.objects.all().order_by('-mobile_id')
+                mobiles = Mobiles.objects.all().order_by('-launched')
 
             response = OrderedDict()
             response['total'] = total
