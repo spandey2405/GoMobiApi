@@ -24,10 +24,10 @@ class MobileLib():
 
         response = OrderedDict()
         response['total'] = total
-
+        response['data'] = OrderedDict()
         for mobile in mobiles:
             selected = MobileSerializer(mobile).data
-            response[selected[KEY_MOBILE_ID]] = selected
+            response['data'][selected[KEY_MOBILE_ID]] = selected
 
         return response
 
