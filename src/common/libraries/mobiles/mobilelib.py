@@ -18,20 +18,20 @@ class MobileLib():
             if "u" in queryobj:
                 searchfor = "%" + queryobj['u'].lower() + "%"
                 total = Mobiles.objects.filter(name__like = searchfor).count()
-                Query = "SELECT * FROM `gomobi_mobiles` WHERE `name` LIKE '{0}' ORDER BY `gomobi_mobiles`.`mobile_id` DESC LIMIT {1} , 32".format(str(searchfor),str(startlist))
-                mobiles = Mobiles.objects.raw(Query)
+                mobiles = Mobiles.objects.filter(name__like = searchfor).order_by('-mobile_id')
+
             else :
                 total = Mobiles.objects.all().count()
-                Query = "SELECT * FROM `gomobi_mobiles` ORDER BY `gomobi_mobiles`.`mobile_id` DESC LIMIT {0} , 32".format(str(startlist))
-                mobiles = Mobiles.objects.raw(Query)
+                mobiles = Mobiles.objects.all().order_by('-mobile_id')
 
             response = OrderedDict()
             response['total'] = total
             response['data'] = OrderedDict()
-            # for mobile in mobiles:
-            #     print mobile
-                # selected = MobileSerializer(mobile).data
-                # response['data'][selected[KEY_MOBILE_ID]] = selected
+
+            for mobile in mobiles:
+                print mobile
+                selected = MobileSerializer(mobile).data
+                response['data'][selected[KEY_MOBILE_ID]] = selected
 
             return response
 
