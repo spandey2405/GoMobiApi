@@ -1,11 +1,18 @@
 from src.common.libraries.constants import *
 from src.common.models.brands import Brands
+from src.api.v1.serializers.brandserializer import BrandSerializer
 import time
 class BrandLib():
 
     def get_grands(self):
 
-        return None
+        response = dict()
+        brands = Brands.objects.all()
+        for brand in brands:
+            selected = BrandSerializer(brand).data
+            response[selected[KEY_BRAND_ID]] = selected
+
+        return response
 
     def add_brand(self, brandlist):
 
